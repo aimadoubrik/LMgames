@@ -88,27 +88,10 @@ function FacebookLogin({ onClose, onLogin }: FacebookLoginProps) {
             </button>
           </form>
 
-          <div className="text-center mt-4">
-            <a href="#" className="text-sm text-[#1877f2] hover:underline">
-              Forgotten account?
-            </a>
-          </div>
-
           <div className="flex items-center my-6">
             <div className="flex-1 border-t border-gray-300"></div>
-            <span className="px-4 text-sm text-gray-500">or</span>
             <div className="flex-1 border-t border-gray-300"></div>
           </div>
-
-          <button className="w-full bg-[#42b72a] hover:bg-[#36a420] text-white font-semibold py-3 rounded-md transition-colors">
-            Create new account
-          </button>
-        </div>
-
-        <div className="bg-gray-50 px-6 py-4 text-center border-t border-gray-200">
-          <p className="text-xs text-gray-600">
-            This is a demo. Not affiliated with Facebook.
-          </p>
         </div>
       </div>
     </div>

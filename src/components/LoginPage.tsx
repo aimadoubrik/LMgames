@@ -110,10 +110,6 @@ function LoginPage({ onBack, onLogin }: LoginPageProps) {
             </svg>
             Log in with Facebook
           </button>
-
-          <a href="#" className="block text-center text-xs text-blue-900 mt-5 hover:text-blue-950">
-            Forgot password?
-          </a>
         </div>
 
         <div className="bg-white border border-gray-300 rounded-sm px-10 py-5 text-center">
