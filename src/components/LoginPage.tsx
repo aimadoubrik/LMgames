@@ -46,7 +46,7 @@ function LoginPage({ onBack, onLogin }: LoginPageProps) {
       </button>
 
       <div className="w-full max-w-sm">
-        <div className="bg-white border border-gray-300 rounded-sm px-10 py-8 mb-3">
+        <div className="bg-white border border-gray-300 rounded-sm px-10 py-8 my-6">
           <div className="flex justify-center mb-8">
             <div className="flex items-center gap-2">
               <Instagram className="w-12 h-12" strokeWidth={1.5} />
